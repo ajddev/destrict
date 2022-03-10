@@ -1,0 +1,2 @@
+# destrict
+uncensorable social media
