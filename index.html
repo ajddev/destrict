@@ -1,0 +1,207 @@
+<!-- 
+    @author: ajddev
+    @name: destrict
+    @description: uncensorable social media 
+
+    index.html 
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>destrict - uncensorable media</title>
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stellar-sdk/10.0.1/stellar-sdk.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/event-source-polyfill/0.0.9/eventsource.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-base64@3.7.2/base64.min.js"></script>
+  </head>
+
+  <body>
+    <!-- Login Page-->
+    <div class="main">
+      <div class="main-container">
+        <div class="logo"><</div>
+        <div class="title">d&#60;strict</div>
+        <div class="login">
+          <input id="private" type="text" placeholder="private key" />
+          <input id="private-submit" type="submit" value="login (testnet)" />
+
+          <div class="test">
+            <ul>
+              test accounts:
+              <li>SC5ZVEYLCKTATIBL3Q7K32ZSIFETD3BXOL6CKQXH3Z4P22FWTPLYQEU2</li>
+              <li>SBP22GTYMMVCWXNVZEVCZIRQQPZZFIVMM43KKAQYQUZUFTBV3VFL46FZ</li>
+              <li>SBG476XVYHQUIPHZLZKI6GEGW6DQUNVDFQ2MYMN3KTOCP25TNEMVVM7X</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Header Tabs -->
+    <div class="bigBox">
+      <div class="box">
+        <div class="tabs hidden">
+          <div class="tab-item">
+            <i
+              class="fas fa-code"
+              style="float: left; padding-left: 20px"
+              onclick="toggleFeed()"
+            ></i>
+          </div>
+          <div class="tab-item">
+            <i class="fal fa-users" onclick="toggleFriends()"></i>
+          </div>
+          <div class="tab-item user">
+            <i
+              class="fal fa-user-circle"
+              style="float: right; padding-right: 20px"
+              onclick="toggleProfile()"
+            ></i>
+          </div>
+        </div>
+
+        <!-- Feed -->
+        <div class="container hidden">
+          <div class="feed">
+            <ul id="new-post">
+              <li>
+                <div class="feed-item">
+                  <div class="new-post-container" style="text-align: center">
+                    <div class="profile-image">
+                      <a href="#whats-new"></a>
+                    </div>
+                    <input
+                      type="text"
+                      id="whats-new-input"
+                      placeholder="What's happening?"
+                    />
+                  </div>
+                  <hr />
+                  <div class="post-options">
+                    <i class="fal fa-image" aria-hidden="true"></i>
+                    <i class="fal fa-smile" aria-hidden="true"></i>
+                    <i class="fal fa-poll-h" aria-hidden="true"></i>
+                    <i class="fal fa-calendar-edit" aria-hidden="true"></i>
+                    <button
+                      style="float: right; font-size: 100%"
+                      onclick="addPost()"
+                    >
+                      <i class="fal fa-code" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <ul id="feed-list"></ul>
+          </div>
+
+          <!-- Friends -->
+          <div class="friends hidden">
+            <div class="friend-wrapper">
+              Add/remove a friend: <input class="publicKeyInput" type="text" />
+              <input
+                type="button"
+                value="submit"
+                onclick="addFriend(document.querySelector('.publicKeyInput').value)"
+              />
+              <div></div>
+              <ul id="friends-list"></ul>
+            </div>
+          </div>
+
+          <!-- Profile -->
+          <div class="profile hidden">
+            <div class="wrapper">
+              <div class="pic"></div>
+              <div class="info">
+                <div id="publicKey"></div>
+                <div class="profile-item">
+                  <div class="edit-title hidden">Name</div>
+                  <i class="fal fa-user-circle"></i>
+                  <div id="profileUsername"></div>
+                  <i
+                    class="fal fa-edit small-edit hidden"
+                    onclick="updateProfile('username')"
+                  ></i>
+                </div>
+                <div class="profile-item">
+                  <div class="edit-title hidden">Bio</div>
+                  <i class="fal fa-book-open"></i>
+                  <div id="bio"></div>
+                  <i
+                    class="fal fa-edit small-edit hidden"
+                    onclick="updateProfile('bio')"
+                  ></i>
+                </div>
+                <div class="profile-item">
+                  <div class="edit-title hidden">Location</div>
+                  <i class="fal fa-location"></i>
+                  <div id="location"></div>
+                  <i
+                    class="fal fa-edit small-edit hidden"
+                    onclick="updateProfile('location')"
+                  ></i>
+                </div>
+                <div class="profile-item">
+                  <div class="edit-title hidden">Website</div>
+                  <i class="fal fa-globe"></i>
+                  <div id="website"></div>
+                  <i
+                    class="fal fa-edit small-edit hidden"
+                    onclick="updateProfile('website')"
+                  ></i>
+                </div>
+                <div id="joinedDate"></div>
+                <div style="float: right">
+                  <button onclick="toggleEditProfile()">Edit Profile</button>
+                </div>
+                <div class="toggle-profile-updates">
+                  <button
+                    style="font-size: 100%"
+                    onclick="toggleProfileUpdates()"
+                  >
+                    toggle profile<br />
+                    updates
+                  </button>
+                </div>
+                <div class="follow-container">
+                  <div class="following">?? Following</div>
+                  <div class="followers">?? Followers</div>
+                </div>
+                <div class="profile-posts-nav">
+                  <div class="nav-item">
+                    <a><u>Posts</u></a>
+                  </div>
+                  <div class="nav-item"><a>Posts & Replies</a></div>
+                  <div class="nav-item"><a>Media</a></div>
+                  <div class="nav-item"><a>Likes</a></div>
+                </div>
+                <hr />
+                <div class="posts">
+                  <div class="profile-feed">
+                    <ul id="profile-feed-list"></ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="addPost">
+            <button style="font-size: 300%" onclick="addPost()">
+              <i class="fal fa-code" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div id="message" class="hidden"></div>
+    </div>
+    <script type="text/javascript" src="script.js"></script>
+  </body>
+</html>
