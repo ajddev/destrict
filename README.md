@@ -1,4 +1,4 @@
-# </>
+# <
 # Destrict
 uncensorable social media
 
