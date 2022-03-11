@@ -1,5 +1,5 @@
 # </>
-# destrict
+# Destrict
 uncensorable social media
 
 https://destrict.org (coming soon)
@@ -19,7 +19,9 @@ So, it's like Twitter/Facebook?
 Destrict is an experimental social media interpreter that enables censorship-resistant networking for anyone, anywhere in the world. In it's current form, Destrict accesses and uses data stored on the Stellar Blockchain, which incorporates the following differences over conventional social networking sites:
 
 Destrict posts live permanently, guaranteed.
+
 Data on the blockchain will be accessible forever.
+
 There is no censorship and deleting old posts is an impossibility.
 
 Logging in to a Destrict is like building your own social media site from scratch on your local machine. 
