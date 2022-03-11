@@ -7,9 +7,9 @@ https://destrict.org (coming soon)
 What is Destrict?
 -----------------
 
-Destrict is an open social network concept for immutably storing and creating posts.
+Destrict is an open social network concept for immutably storing, sharing and producing content.
 
-Destrict makes it possible to connect with peers and create, share, and store unalterable information.
+Destrict makes it possible to connect with peers and easily create unalterable information.
 
 Destrict is designed to preserve freedom of speech and expression.
 
@@ -24,17 +24,16 @@ Data on the blockchain will be accessible forever.
 
 There is no censorship and deleting old posts is an impossibility.
 
-Logging in to a Destrict is like building your own social media site from scratch on your local machine. 
+Logging in to a Destrict is like building your own social media site from data found on the Stellar distributed ledger. Transactions on Stellar and the operations that they are composed of are capable of managing data entries. Once transactions are sent and added to the ledger, the information can never be altered. Ledger and data entries (even if the "removed" later) will historically always be available and able to be viewed.
 
 What do I do on Destrict?
 -------------------------
 
-Destricts will never be able to have an edit button and posts cannot be altered after posting. With immutability comes accountability- there are no take backs, so be mindful, and think thrice.
+Destrict will never be able to have an edit button and posts cannot be changed after posting. With immutability comes accountability- there are no take backs, so be mindful, and think thrice.
 
-While the Destrict concept can theoretically be built on any timechain, currently the Stellar decentralized protocol is used. Stellar is fast, and transactions cost fractions of a penny.
+While the Destrict concept can theoretically be built on any timechain, currently the Stellar decentralized protocol is used. Stellar is fast and transactions cost a fraction of a cent. When the network is below capacity, over five thousand posts would cost a penny.
 
-You do not need to provide any information to start a Destrict. The Destrict sign up process is one-click.
-The testnet is free-to-use. You don't have to own any cryptocurrency, but you should own some Bitcoin.
+The testnet is completely free-to-use. You don't have to own any cryptocurrency. You do not need to provide any information to start a Destrict. The Destrict sign up process is one-click.
 
 Disclaimer
 ----------
